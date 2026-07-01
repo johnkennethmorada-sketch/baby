@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy 1 Month ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#ffd6e7,#ffeef5);
+    overflow:hidden;
+}
+
+.container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    padding:20px;
+}
+
+.card{
+    background:white;
+    width:90%;
+    max-width:650px;
+    border-radius:25px;
+    padding:35px;
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+    text-align:center;
+    z-index:2;
+}
+
+h1{
+    color:#ff5b9a;
+    margin-bottom:15px;
+}
+
+button{
+    margin-top:25px;
+    padding:14px 28px;
+    border:none;
+    background:#ff5b9a;
+    color:white;
+    border-radius:30px;
+    cursor:pointer;
+    font-size:16px;
+    transition:.3s;
+}
+
+button:hover{
+    transform:scale(1.05);
+}
+
+#letter{
+    display:none;
+    text-align:left;
+    margin-top:25px;
+    line-height:1.8;
+    color:#444;
+    white-space:pre-wrap;
+}
+
+.heart{
+    position:absolute;
+    color:pink;
+    animation:float 8s linear infinite;
+}
+
+@keyframes float{
+    from{
+        transform:translateY(100vh);
+        opacity:1;
+    }
+    to{
+        transform:translateY(-120px);
+        opacity:0;
+    }
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+<div class="card">
+
+<h1>happy 1 month, love 💗</h1>
+
+<p>i made something just for you.</p>
+
+<button onclick="showLetter()">open my heart</button>
+
+<div id="letter"></div>
+
+</div>
+
+</div>
+
+<script>
+
+const message=`happy 1 month, love.
+
+ang bilis ng panahon, pero sa isang buwan na magkasama tayo, ang dami ko nang natutunan tungkol sa pagmamahal.
+
+thank you kasi pinili mo akong mahalin kahit hindi ako perfect. thank you sa lahat ng effort, sa patience mo, sa pag-intindi mo kahit minsan ang hirap kong mahalin.
+
+gusto ko ring humingi ng sorry.
+
+sorry kung minsan inaaway kita. sorry kung may mga pagkakataong nasasaktan kita dahil sa ugali ko o sa mga salitang hindi ko napipigilan. pagkatapos ng bawat away, lagi kong narerealize na ikaw yung taong ayokong masaktan. sobrang pinagsisisihan ko kapag naiisip kong ako mismo yung dahilan ng lungkot mo.
+
+hindi ko kayang baguhin ang mga nagawa ko noon, pero kaya kong baguhin ang sarili ko simula ngayon. gusto kong maging boyfriend na mas kalmado, mas understanding, at mas deserving ng pagmamahal mo.
+
+mahal na mahal kita.
+
+pipiliin pa rin kita sa mga araw na masaya tayo, pati sa mga araw na hindi tayo okay. gusto kong sabay nating ayusin ang lahat, hindi ang iwan ang isa't isa.
+
+salamat sa unang buwan nating magkasama.
+
+sana ito pa lang ang simula ng napakarami pa nating months, memories, at pangarap.
+
+happy 1 month, love.
+
+i love you always. 🤍`;
+
+function showLetter(){
+
+document.querySelector("button").style.display="none";
+
+let box=document.getElementById("letter");
+
+box.style.display="block";
+
+let i=0;
+
+let speed=28;
+
+function type(){
+
+if(i<message.length){
+
+box.innerHTML+=message.charAt(i);
+
+i++;
+
+setTimeout(type,speed);
+
+}
+
+}
+
+type();
+
+}
+
+function hearts(){
+
+const heart=document.createElement("div");
+
+heart.className="heart";
+
+heart.innerHTML="❤";
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.fontSize=(15+Math.random()*30)+"px";
+
+heart.style.animationDuration=(4+Math.random()*4)+"s";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>heart.remove(),8000);
+
+}
+
+setInterval(hearts,350);
+
+</script>
+
+</body>
+</html>
